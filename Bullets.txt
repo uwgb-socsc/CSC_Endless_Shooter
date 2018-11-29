@@ -1,0 +1,4 @@
+Zigzag bullet
+Exploding bullet
+X bullet
+homing bullet
