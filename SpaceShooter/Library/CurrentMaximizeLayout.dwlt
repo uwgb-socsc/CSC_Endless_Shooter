@@ -47,15 +47,15 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 372
-    y: 92
+    x: 380
+    y: 100
     width: 825
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 07000000000000000000000010000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 0700000000000000000000000f000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -144,8 +144,8 @@ MonoBehaviour:
     y: 0
     width: 370
     height: 248
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -173,16 +173,16 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 92
+    x: 8
+    y: 100
     width: 368
     height: 227
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 062d0000
-    m_LastClickedID: 11526
-    m_ExpandedIDs: 44f7ffff98fbffff00000000d02c0000
+    m_SelectedIDs: e2060000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 9efbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -252,8 +252,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 340
+    x: 8
+    y: 348
     width: 368
     height: 462
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -268,18 +268,19 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/Scripts
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Dylan\Desktop\Endless_Shooter\CSC_Endless_Shooter\SpaceShooter
+  m_LastProjectPath: C:\Users\octo1\Documents\GitHub\CSC_Endless_Shooter\SpaceShooter
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d4320000
     m_LastClickedID: 13012
-    m_ExpandedIDs: 00000000ae270000382800007828000088280000d2280000e6280000f22800001829000034290000be290000822c0000842c0000862c0000
+    m_ExpandedIDs: 000000007c270000b8270000c82700001228000028280000342800005c2800007828000002290000c22b0000c42b0000c62b0000c82b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -304,10 +305,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 264}
-    m_SelectedIDs: 062d0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae270000382800007828000088280000d2280000e6280000f22800001829000034290000be290000822c0000842c0000862c0000
+    scrollPos: {x: 0, y: 248}
+    m_SelectedIDs: e2060000
+    m_LastClickedID: 1762
+    m_ExpandedIDs: 000000007c270000b8270000c82700001228000028280000342800005c2800007828000002290000c22b0000c42b0000c62b0000c82b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -332,8 +333,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 062d0000
-    m_LastClickedInstanceID: 11526
+    m_SelectedInstanceIDs: e2060000
+    m_LastClickedInstanceID: 1762
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -583,8 +584,8 @@ MonoBehaviour:
     y: 0
     width: 337
     height: 731
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -613,12 +614,12 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1201
-    y: 92
+    x: 1209
+    y: 100
     width: 335
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 328.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 336

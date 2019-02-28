@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.4964139, b: 0.57481974, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641478, b: 0.5748201, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -323,6 +323,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c9126c0fd3e0a41a89c1b07416579e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalHazards:
+  - {fileID: 1466305329124382, guid: b47d637b50f4c7f4d83898d78d5d881f, type: 2}
+  downHazards:
+  - {fileID: 1214894027468274, guid: 3cb30a1c3607dc34590c12a6dbc1419d, type: 2}
+  upHazards:
+  - {fileID: 1340990360817048, guid: 0ef8f67d13614af44bb412b8730863fa, type: 2}
+  backHazards:
+  - {fileID: 1650860275149254, guid: 9ad1b40e0faa6bb4f88c59a85bd4efa1, type: 2}
+  player: {fileID: 1706455242}
+  spawnValues: {x: -10, y: 0, z: 5}
+  spawnValues1: {x: 10, y: 0, z: 10}
+  spawnValues2: {x: -10, y: 0, z: -10}
+  spawnValues3: {x: 10, y: 0, z: -5}
+  hazardCount: 1
+  respawnWait: 0
+  spawnWait: 0.5
+  startWait: 1
+  waveWait: 0
+  speedInc: 1
+  lives: 5
+  scoreText: {fileID: 0}
+  resetText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  livesText: {fileID: 0}
 --- !u!1 &1577445121
 GameObject:
   m_ObjectHideFlags: 0
