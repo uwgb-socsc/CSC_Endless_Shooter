@@ -29,29 +29,9 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            switch(pattern)
-            {
-                case 3:
-                    Instantiate(shot, shotSpawn[1].position, shotSpawn[1].rotation);
-                    Instantiate(shot, shotSpawn[2].position, shotSpawn[2].rotation);
-                    Instantiate(shot, shotSpawn[3].position, shotSpawn[1].rotation);
-                    Instantiate(shot, shotSpawn[4].position, shotSpawn[2].rotation);
-                    break;
-                case 1:
-                    Instantiate(shot, shotSpawn[1].position, shotSpawn[1].rotation);
-                    Instantiate(shot, shotSpawn[2].position, shotSpawn[2].rotation);
-                    break;
-                case 2:
-                    Instantiate(shot, shotSpawn[0].position, shotSpawn[1].rotation);
-                    Instantiate(shot, shotSpawn[3].position, shotSpawn[2].rotation);
-                    Instantiate(shot, shotSpawn[4].position, shotSpawn[2].rotation);
-                    break;
-                case 0:
-                    Instantiate(shot, shotSpawn[0].position, shotSpawn[1].rotation);
-                    break;
-            }
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
+            Instantiate(shot, shotSpawn[0].position, shotSpawn[0].rotation);
+            //AudioSource audio = GetComponent<AudioSource>();
+            //audio.Play();
         }
     }
 
