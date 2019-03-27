@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
 		
 	}
 
-    public void addLive()
+    public void GameOver()
     {
 
     }

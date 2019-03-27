@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Boundary
@@ -9,24 +10,27 @@ public class Boundary
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed, tilt;
+    public Slider slider;
+    public GameObject explo;
+
+    public float speed, tilt, health = 1f;
     public Boundary boundary;
-    public GameObject shield;
 
     public GameObject shot;
     public Transform[] shotSpawn;
     public float fireRate;
 
     private float nextFire;
-    private int pattern = 0;
-    private bool shieldUp = false;
-    private int shields = 0;
-
     private GameController gc;
+
+    void Start()
+    {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
 
     void Update()
     {
-        if(Input.GetButton("Fire1") && Time.time > nextFire)
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn[0].position, shotSpawn[0].rotation);
@@ -54,83 +58,18 @@ public class PlayerController : MonoBehaviour
         rb.rotation = Quaternion.Euler(rb.velocity.z * tilt, 0.0f, 0.0f);
     }
 
-    public void PowerUp(int i)
+    public void UpdateSlider(float remove)
     {
-        switch (i)
+        health -= remove;
+        if (health < 0)
+            health = 0;
+        slider.value = health;
+        if (health == 0)
         {
-            case 0:
-                Shield();
-                break;
-            case 1:
-                SpeedUp();
-                break;
-            case 2:
-                FirePattern();
-                break;
-            case 3:
-                FireRate();
-                break;
-            case 4:
-                ExtraLife();
-                break;
+            gc.GameOver();
+            if (explo != null)
+                Instantiate(explo, transform);
+            Destroy(gameObject);
         }
-    }
-
-    private void Shield()
-    {
-        if (!shieldUp)
-        {
-            SpawnShield();
-            shieldUp = true;
-        }
-        shields++;
-        if (shields > 5)
-            shields = 5;
-    }
-
-    private void SpawnShield()
-    {
-        GameObject a = Instantiate(shield, transform.position, transform.rotation);
-        a.transform.parent = gameObject.transform;
-    }
-
-    private void SpeedUp()
-    {
-        speed += 1;
-        if (speed > 15)
-            speed = 15;
-    }
-
-    private void FirePattern()
-    {
-        pattern++;
-        if (pattern == 4)
-            pattern = 3;
-    }
-
-    private void FireRate()
-    {
-        fireRate -= .03f;
-        if (fireRate < .1f)
-            fireRate = .1f;
-    }
-
-    private void ExtraLife()
-    {
-        GameObject gcObj = GameObject.FindWithTag("GameController");
-        if (gcObj != null)
-            gc = gcObj.GetComponent<GameController>();
-        if (gc == null)
-            Debug.Log("Cannot find 'GameContoller' script!");
-        gc.addLive();
-    }
-
-    public void DestroyShield()
-    {
-        shields--;
-        if (shields > 0)
-            Invoke("SpawnShield", 2);
-        else
-            shieldUp = false;
     }
 }
