@@ -8,6 +8,7 @@ public class BGMover : MonoBehaviour {
     public float tileSizeX;
 
     private Vector3 startPosition;
+    public GameController gc;
 
     void Start ()
     {
@@ -15,7 +16,14 @@ public class BGMover : MonoBehaviour {
     }
 
 	void Update () {
-        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeX);
-        transform.position = startPosition + Vector3.left * newPosition;
+        if (!gc.pause)
+        {
+            float newPosition = Mathf.Repeat(Time.deltaTime * scrollSpeed, tileSizeX);
+            transform.position = transform.position + Vector3.left * newPosition;
+            if(transform.position.x < startPosition.x)
+            {
+                transform.position = new Vector3(transform.position.x + tileSizeX, transform.position.y, transform.position.z);
+            }
+        }
 	}
 }

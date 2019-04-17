@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DestroyByContact : MonoBehaviour
 {
+    public int damage = 1;
     private GameController gc;
-    public GameObject explo;
+    public GameObject bulExp, exp;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,32 +19,40 @@ public class DestroyByContact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Enemy"))
         {
-            PlayerController pc = other.gameObject.GetComponent<PlayerController>();
-            pc.UpdateSlider(.1f);
-            if (explo != null)
+            if (other.CompareTag("ExploBullet"))
             {
-                Instantiate(explo, transform.position, transform.rotation);
-                Destroy(gameObject);
+                if (bulExp != null)
+                {
+                    Destroy(other.gameObject);
+                    Instantiate(bulExp, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                    Destroy(gameObject);
+                }
             }
-            else
+            else if(!other.CompareTag("Boundary"))
             {
-                Destroy(gameObject);
-            }
-        }
-        else if (other.CompareTag("Bullet"))
-        {
-            if (explo != null)
-            {
-                Destroy(other.gameObject);
-                Instantiate(explo, transform.position, transform.rotation);
-                Destroy(gameObject);
-            }
-            else
-            {
-                Destroy(other.gameObject);
-                Destroy(gameObject);
+                if (other.CompareTag("Player"))
+                {
+                    PlayerController pc = other.gameObject.GetComponent<PlayerController>();
+                    if (pc == null)
+                        Debug.Log("PC not found!");
+                    pc.UpdateSlider(damage);
+                }
+                if (exp != null)
+                {
+                    Instantiate(exp, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
