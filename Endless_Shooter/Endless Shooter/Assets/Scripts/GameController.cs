@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < hazardCount; i++)
             {
                 GameObject hazard = normalHazards[Random.Range(0, normalHazards.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                Vector3 spawnPosition = new Vector3(spawnValues.x, spawnValues.y, Random.Range(-spawnValues.z, spawnValues.z));
                 Quaternion spawnRotation = Quaternion.identity;
                 GameObject a = Instantiate(hazard, spawnPosition, spawnRotation);
                 Mover m = a.GetComponent<Mover>();
@@ -73,9 +73,9 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < hazardCount; i++)
             {
                 GameObject hazard1 = downHazards[Random.Range(0, downHazards.Length)];
-                Vector3 spawnPosition1 = new Vector3(Random.Range(-spawnValues1.x, spawnValues.x), spawnValues1.y, spawnValues1.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                GameObject b = Instantiate(hazard1, spawnPosition1, spawnRotation);
+                Vector3 spawnPosition1 = new Vector3(Random.Range(-spawnValues1.x, spawnValues1.x), spawnValues1.y, spawnValues1.z);
+                Quaternion spawnRotation1 = Quaternion.identity;
+                GameObject b = Instantiate(hazard1, spawnPosition1, spawnRotation1);
                 Mover m = b.GetComponent<Mover>();
                 m.speed += -.05f * round;
                 yield return new WaitForSeconds(spawnWait);
@@ -83,9 +83,9 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < hazardCount; i++)
             {
                 GameObject hazard2 = upHazards[Random.Range(0, upHazards.Length)];
-                Vector3 spawnPosition2 = new Vector3(Random.Range(-spawnValues2.x, spawnValues.x), spawnValues2.y, spawnValues2.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                GameObject c = Instantiate(hazard2, spawnPosition2, spawnRotation);
+                Vector3 spawnPosition2 = new Vector3(Random.Range(-spawnValues2.x, spawnValues2.x), spawnValues2.y, spawnValues2.z);
+                Quaternion spawnRotation2 = Quaternion.identity;
+                GameObject c = Instantiate(hazard2, spawnPosition2, spawnRotation2);
                 Mover m = c.GetComponent<Mover>();
                 m.speed += -.05f * round;
                 yield return new WaitForSeconds(spawnWait);
@@ -93,9 +93,9 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < hazardCount; i++)
             {
                 GameObject hazard3 = backHazards[Random.Range(0, backHazards.Length)];
-                Vector3 spawnPosition3 = new Vector3(Random.Range(-spawnValues3.x, spawnValues.x), spawnValues3.y, spawnValues3.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                GameObject d = Instantiate(hazard3, spawnPosition3, spawnRotation);
+                Vector3 spawnPosition3 = new Vector3(spawnValues3.x, spawnValues3.y, Random.Range(-spawnValues3.z, spawnValues3.z));
+                Quaternion spawnRotation3 = Quaternion.identity;
+                GameObject d = Instantiate(hazard3, spawnPosition3, spawnRotation3);
                 Mover m = d.GetComponent<Mover>();
                 m.speed += -.05f * round;
                 yield return new WaitForSeconds(spawnWait);
