@@ -32,7 +32,7 @@ public class DestroyByContact : MonoBehaviour
                 else
                 {
                     Destroy(other.gameObject);
-                    //Destroy(gameObject);
+                    Destroy(gameObject);
                 }
             }
             else if(!other.CompareTag("Boundary"))
@@ -52,7 +52,7 @@ public class DestroyByContact : MonoBehaviour
                 {
                     Instantiate(exp, transform.position, transform.rotation);
                 }
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
         }
     }
