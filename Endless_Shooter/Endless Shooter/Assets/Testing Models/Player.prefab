@@ -56,7 +56,7 @@ MonoBehaviour:
     xMax: 4.5
     zMin: -4.5
     zMax: 4.5
-  shot: {fileID: 6207225087202412791, guid: 606086663ce2f0045bd2e48d8dc84df0, type: 3}
+  shot: {fileID: 792814479714709504, guid: 35a982fa3657fdc4ca28c8769eae0d2b, type: 3}
   shotSpawn:
   - {fileID: 4951986761005926}
   fireRate: 0.25

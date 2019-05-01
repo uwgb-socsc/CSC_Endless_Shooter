@@ -32,7 +32,7 @@ public class DestroyByContact : MonoBehaviour
                 else
                 {
                     Destroy(other.gameObject);
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
                 }
             }
             else if(!other.CompareTag("Boundary"))
@@ -44,15 +44,15 @@ public class DestroyByContact : MonoBehaviour
                         Debug.Log("PC not found!");
                     pc.UpdateSlider(damage);
                 }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
                 if (exp != null)
                 {
                     Instantiate(exp, transform.position, transform.rotation);
-                    Destroy(gameObject);
                 }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                //Destroy(gameObject);
             }
         }
     }
